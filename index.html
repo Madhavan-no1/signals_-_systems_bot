@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attractive Chatbot Integration</title>
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: 'Poppins', sans-serif;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #2575fc;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+
+    .button {
+      background-color: #2575fc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #6a11cb;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to SS-bot</h1>
+    <p>We're here to assist you 24/7. Start chatting by clicking the chat bubble at the bottom right corner.</p>
+    <button class="button" onclick="document.querySelector('df-messenger').shadowRoot.querySelector('button').click()">Start Chat</button>
+  </div>
+  
+  <df-messenger
+    project-id="sih-chatbot-432915"
+    agent-id="a93b0d73-7605-4dd0-b967-6bcb2941388e"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="SS-bot"></df-messenger-chat-bubble>
+  </df-messenger>
+
+</body>
+</html>
